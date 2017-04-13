@@ -67,8 +67,16 @@ async function init() {
     async function connected() {
       echo(`Creating container`);
 
-      const container = await docker.denodeify.createContainer({Image: TAG, AttachStdin: true, OpenStdin: true, Tty: true});
-
+      const container = await docker.denodeify.createContainer({
+                Image: TAG,
+                AttachStdin: true,
+                OpenStdin: true,
+                'Volumes': {'/app':{}},
+                'Hostconfig': {
+                  'Binds': ['/home/root:/app']
+                },
+                Tty: true
+      });
       console.log(`[INFO] Created container ${ formatId(container.id) }`);
 
       try {
