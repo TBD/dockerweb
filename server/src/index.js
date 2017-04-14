@@ -73,7 +73,7 @@ async function init() {
                 OpenStdin: true,
                 'Volumes': {'/app':{}},
                 'Hostconfig': {
-                  'Binds': [process.env.PROJECT_PATH || '/home/root' + ':/app']
+                  'Binds': [(process.env.PROJECT_PATH || '/home/root') + ':/app']
                 },
                 Tty: true
       });
