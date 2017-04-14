@@ -8,13 +8,13 @@ You'll need Docker installed and running, probably on a Linux or Mac machine (â€
 
 An express app will start, connect to Docker on `/var/run/docker.sock` and build a minimal Alpine linux image.
 
-Visiting `http://localhost:3000/` will spin up a new Docker container and connect your browser to it. Type away!
+Visiting `http://localhost:7777/` will spin up a new Docker container and connect your browser to it. Type away!
 
 ## Installation
 
 Using docker-compose:
 
-> docker-compose up --build web && open http://localhost:3000/
+> docker-compose up --build web && open http://localhost:7777/
 
 ...or on your host, using Node 6.2+:
 
@@ -22,5 +22,5 @@ Using docker-compose:
 cd server
 npm install
 npm start
-open http://localhost:3000/
+open http://localhost:7777/
 ```
