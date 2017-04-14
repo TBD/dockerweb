@@ -11,7 +11,7 @@ RUN apk add --no-cache python make gcc g++ \
 
 COPY server/ .
 
-EXPOSE 3000
+EXPOSE 7777
 
 VOLUME /var/run/docker.sock
 
