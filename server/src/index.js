@@ -60,7 +60,7 @@ async function init() {
 
   console.log('[INFO] Starting server');
 
-  server(http.createServer(app).listen(process.env.PORT || 3000), {path: '/wetty/socket.io'}).on('connection', function (socket) {
+  server(http.createServer(app).listen(process.env.PORT || 7777), {path: '/wetty/socket.io'}).on('connection', function (socket) {
     const write = (data) => socket.emit('output', data)
     const echo = (data) => write(`${ data }\r\n`);
 
@@ -73,7 +73,7 @@ async function init() {
                 OpenStdin: true,
                 'Volumes': {'/app':{}},
                 'Hostconfig': {
-                  'Binds': ['/home/root:/app']
+                  'Binds': [process.env.PROJECT_PATH || '/home/root' + ':/app']
                 },
                 Tty: true
       });
