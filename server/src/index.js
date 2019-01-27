@@ -1,6 +1,6 @@
 import Docker from 'dockerode';
 import './lib/denodeify-proxy';
-import pty from 'pty.js';
+import pty from 'node-pty';
 import express from 'express';
 import http from 'http';
 import server from 'socket.io';
