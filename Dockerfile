@@ -1,4 +1,6 @@
-FROM mhart/alpine-node:latest
+FROM alpine:latest
+RUN apk add nodejs-current
+RUN apk add npm
 
 WORKDIR /opt/dockerweb
 
