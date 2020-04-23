@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:latest
 RUN apk add nodejs-current
 RUN apk add npm
 
